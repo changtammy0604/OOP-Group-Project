@@ -25,7 +25,7 @@ def run(episodes, is_training=True, render=False):
 
     learning_rate_a = 0.9 # alpha or learning rate
     discount_factor_g = 0.9 # gamma or discount rate. Near 0: more weight/reward placed on immediate state. Near 1: more on future state.
-    epsilon = 1         # 1 = 100% random actions
+    epsilon = 0         # 1 = 100% random actions
     epsilon_decay_rate = 0.0001        # epsilon decay rate. 1/0.0001 = 10,000
     rng = np.random.default_rng()   # random number generator
 
@@ -61,12 +61,14 @@ def run(episodes, is_training=True, render=False):
 
     env.close()
 
+    # generate the png file
     sum_rewards = np.zeros(episodes)
     for t in range(episodes):
         sum_rewards[t] = np.sum(rewards_per_episode[max(0, t-100):(t+1)])
     plt.plot(sum_rewards)
     plt.savefig('frozen_lake8x8.png')
     
+    # if training has finshed, print success rate
     if is_training == False:
         print(print_success_rate(rewards_per_episode))
 
