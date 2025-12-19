@@ -22,6 +22,7 @@ const char* password = "cheese0609";
 Discord_Webhook discord;
 String channel_id = "1436165223194038484";
 String token = "k9GqhPuA9JqYd6MMWh2dGo0elifmR93GmYNlndESow1ZZapi2YnSaj7vMdhRRxPISC3-";
+// https://discord.com/api/webhooks/1436165223194038484/k9GqhPuA9JqYd6MMWh2dGo0elifmR93GmYNlndESow1ZZapi2YnSaj7vMdhRRxPISC3-
 
 // 初始設定
 void setup() {
