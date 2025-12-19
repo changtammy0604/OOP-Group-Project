@@ -84,7 +84,7 @@ def run(episodes, is_training=True, render=False, show_result = True):
         if reward == 1:
             rewards_per_episode[i] = 1
 
-        #output the cause of termination
+        # Output the cause of termination
         if show_result:
             if reward == 1:
                     print("Terminated: get reward")
